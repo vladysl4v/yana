@@ -4,6 +4,7 @@ logs
 
 # Editor directories and files
 .vscode/*
+bin/*
 !.vscode/extensions.json
 .idea
 .DS_Store
