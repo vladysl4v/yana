@@ -1,14 +1,14 @@
 import React from 'react';
 import { toDateTimeString } from '../utils/formats';
+import { WithClasses } from '../types/basicProps';
 
 interface NoteItemProps {
     title: string;
     content: string;
     timestamp: Date;
-    className?: string;
 }
 
-const NoteItem: React.FC<NoteItemProps> = ({ title, content, timestamp, className = null }) => {
+const NoteItem: React.FC<WithClasses<NoteItemProps>> = ({ title, content, timestamp, className = null}) => {
     return (
         <div className={`border-4 shadow-xl max-w-64 border-yellow-400 py-2 bg-yellow-50 rounded-3xl overflow-hidden my-4 ${className}`}>
             <div className="px-6 py-4">

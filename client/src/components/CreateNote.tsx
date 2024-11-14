@@ -1,11 +1,9 @@
 import React from 'react';
 import { FaPlusCircle } from "react-icons/fa";
+import { ClassNameProps } from '../types/basicProps';
 
-type CreateItemProps = {
-    className?: string;
-}
 
-const CreateNote: React.FC<CreateItemProps> = ({className = null}) => {
+const CreateNote: React.FC<ClassNameProps> = ({ className = null }) => {
     return (
         <div className={`w-64 border-4 bg-yellow-200 border-yellow-400 py-2 rounded-3xl overflow-hidden my-4 ${className}`}>
             <div className='flex h-full m-auto'>

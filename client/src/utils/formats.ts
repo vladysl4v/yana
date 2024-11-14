@@ -1,5 +1,5 @@
 
-export const toDateTimeString = (date: Date) => {
+export const toDateTimeString = (date: Date): string => {
     const now: Date = new Date();
     const diff: number = now.getTime() - date.getTime();
     // if less than 1 minute ago
