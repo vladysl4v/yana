@@ -15,7 +15,7 @@ const MainPage: React.FC = () => {
             </p>
             <div className="mt-[200px]">
                 <NoteItem 
-                    className='shadow-[0px_0px_39px_17px_#fefcbf]'
+                    className='shadow-[0px_0px_39px_17px_#fefcbf] mx-auto'
                     title="YANA" 
                     content="Write down everything you want to memorize but will eventually forget."
                     timestamp={showcaseNoteDate} 

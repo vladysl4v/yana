@@ -10,7 +10,7 @@ interface NoteItemProps {
 
 const NoteItem: React.FC<NoteItemProps> = ({ title, content, timestamp, className = null }) => {
     return (
-        <div className={`mx-auto border-4 shadow-xl max-w-64 border-yellow-400 py-2 bg-yellow-50 rounded-3xl overflow-hidden my-4 ${className}`}>
+        <div className={`border-4 shadow-xl max-w-64 border-yellow-400 py-2 bg-yellow-50 rounded-3xl overflow-hidden my-4 ${className}`}>
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{title}</div>
                 <p className="text-gray-700 text-base">
