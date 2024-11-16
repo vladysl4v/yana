@@ -1,7 +1,8 @@
 
-export const toDateTimeString = (date: Date): string => {
+export const toDateTimeString = (date: Date | string): string => {
+    const dateTime = new Date(date);
     const now: Date = new Date();
-    const diff: number = now.getTime() - date.getTime();
+    const diff: number = now.getTime() - dateTime.getTime();
     // if less than 1 minute ago
     if (diff < 60 * 1000) {
         return 'Now';
@@ -14,5 +15,5 @@ export const toDateTimeString = (date: Date): string => {
     if (diff < (24 * 60 * 60 * 1000)) {
         return `${Math.floor(diff / (60 * 60 * 1000))} hours ago`;
     }
-    return date.toLocaleString();
+    return dateTime.toLocaleString();
 }

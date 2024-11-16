@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { FaSun, FaMoon } from "react-icons/fa";
-import { ClassNameProps } from '../types/basicProps';
+import { ClassNameProps } from '../types/props.types';
 
 const ThemeSwitch: React.FC<ClassNameProps> = ({ className = null }) => {
     const [themeState, setThemeState] = useLocalStorage('theme', '');
