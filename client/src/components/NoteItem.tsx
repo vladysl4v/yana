@@ -12,7 +12,7 @@ interface NoteItemProps {
 
 const NoteItem: React.FC<WithClasses<NoteItemProps>> = ({ note, onOpen, onEdit, className = null}) => {
     return (
-        <div onClick={() => onOpen(note)} className={`border-4 select-none shadow-xl grid border-yellow-400 bg-yellow-50 dark:bg-dark-light  dark:border-yellow-900 rounded-3xl ${className}`}>
+        <div onClick={() => onOpen(note)} className={`border-4 select-none cursor-pointer shadow-xl grid border-yellow-400 bg-yellow-50 dark:bg-dark-light  dark:border-yellow-900 rounded-3xl ${className}`}>
             <div className="px-6 py-4">
                 <p className="max-h-12 font-bold text-lg md:text-xl md:max-h-14 mb-2 dark:text-yellow-500 overflow-clip">
                     {note.title}
