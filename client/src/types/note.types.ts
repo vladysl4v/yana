@@ -19,7 +19,8 @@ export type NoteControls = {
     setNoteAction: React.Dispatch<React.SetStateAction<NoteActionTypes | null>>;
     saveNote: (noteArgs: NoteSavedEventArgs) => void;
     openNote: (note : Note | null, noteAction: NoteActionTypes) => void;
-    closeModal: () => void;
+    closeNote: () => void;
+    deleteNote: (noteId : string) => void;
 }
 
 export enum NoteActionTypes {

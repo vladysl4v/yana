@@ -42,10 +42,10 @@ const UpdateNote: React.FC<NoteModalProps> = ({ controls }) => {
                         <span className="text-gray-700 dark:text-gray-300 text-sm">Updated {toDateTimeString(controls.selectedNote.updatedAt)}</span>
                     </div>)
             }
-            <div className="flex justify-end">
+            <div className="flex relative bottom-0 justify-end">
                 <button
                     className="border-[2px] font-medium border-yellow-950 py-2 text-yellow-950 dark:text-gray-400 hover:bg-yellow-950 hover:text-white duration-300 px-3 rounded-xl mr-2"
-                    onClick={controls.closeModal}>
+                    onClick={controls.closeNote}>
                         Cancel
                 </button>
                 <button

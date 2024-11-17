@@ -3,7 +3,7 @@ import { Note, NoteActionTypes, NoteControls, NoteSavedEventArgs } from '../type
 import { useNotes } from './useNotes';
 
 const useNoteControls = (): NoteControls => {
-    const [_, updateNote] = useNotes();
+    const [_, updateNote, removeNote] = useNotes();
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [noteAction, setNoteAction] = useState<NoteActionTypes | null>(null);
     const [selectedNote, setSelectedNote] = useState<Note | null>(null);
@@ -19,6 +19,11 @@ const useNoteControls = (): NoteControls => {
         setSelectedNote(null);
     }
 
+    const deleteNote = (noteId : string) => {
+        closeModal();
+        removeNote(noteId);
+    }
+
     const saveNote = (noteArgs: NoteSavedEventArgs) => {
         updateNote(noteArgs);
         closeModal();
@@ -31,7 +36,8 @@ const useNoteControls = (): NoteControls => {
         setNoteAction,
         saveNote,
         openNote,
-        closeModal,
+        closeNote: closeModal,
+        deleteNote
     };
 };
 
