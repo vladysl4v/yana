@@ -4,7 +4,7 @@ import { FaSun, FaMoon } from "react-icons/fa";
 import { ClassNameProps } from '../types/props.types';
 
 const ThemeSwitch: React.FC<ClassNameProps> = ({ className = null }) => {
-    const [themeState, setThemeState] = useLocalStorage('theme', '');
+    const [themeState, setThemeState] = useLocalStorage<string>('theme', '');
 
     useEffect(() => {
         document.documentElement.classList.toggle('dark', themeState === 'dark');

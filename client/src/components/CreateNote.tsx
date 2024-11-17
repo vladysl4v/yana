@@ -3,7 +3,7 @@ import { FaPlusCircle } from "react-icons/fa";
 import { WithClasses } from '../types/props.types';
 
 interface CreateNoteProps {
-    onClick?: () => void;
+    onClick: () => void;
 }
 
 const CreateNote: React.FC<WithClasses<CreateNoteProps>> = ({ onClick, className = null }) => {

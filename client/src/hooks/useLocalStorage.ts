@@ -15,15 +15,22 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, Dispatch<S
   const serializer = useCallback<(value: T) => string>(value => {
       return JSON.stringify(value)
     },[])
+
   const deserializer = useCallback<(value: string) => T>(value => {
       // Support 'undefined' as a value
       if (value === 'undefined') {
         return undefined as unknown as T
       }
-      const defaultValue =initialValue
+      const dateTimeDeserializer = (key: any, value: any) => {
+        if ( key === 'updatedAt' ) {
+            return new Date(value);
+        }
+        return value;
+      }
+      const defaultValue = initialValue
       let parsed: unknown
       try {
-        parsed = JSON.parse(value)
+        parsed = JSON.parse(value, dateTimeDeserializer)
       } catch (error) {
         console.error('Error parsing JSON:', error)
         return defaultValue

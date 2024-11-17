@@ -7,6 +7,7 @@ const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
+    
     const navigateTo = (url: string) => {
         navigate(url);
         setIsMenuOpen(false);

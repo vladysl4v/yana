@@ -12,3 +12,21 @@ export type NoteSavedEventArgs = {
     text: string;
 }
 
+export type NoteControls = {
+    noteAction: NoteActionTypes | null;
+    selectedNote: Note | null;
+    isOpen: boolean;
+    setNoteAction: React.Dispatch<React.SetStateAction<NoteActionTypes | null>>;
+    saveNote: (noteArgs: NoteSavedEventArgs) => void;
+    openNote: (note : Note | null, noteAction: NoteActionTypes) => void;
+    closeModal: () => void;
+}
+
+export enum NoteActionTypes {
+    EDIT,
+    READ
+}
+
+export type NoteModalProps = {
+    controls: NoteControls
+}
