@@ -2,7 +2,7 @@ import React from 'react';
 import { FaPlusCircle } from "react-icons/fa";
 import { WithClasses } from '../types/props.types';
 
-interface CreateNoteProps {
+type CreateNoteProps = {
     onClick: () => void;
 }
 

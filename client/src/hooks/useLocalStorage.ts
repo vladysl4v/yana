@@ -17,7 +17,6 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, Dispatch<S
     },[])
 
   const deserializer = useCallback<(value: string) => T>(value => {
-      // Support 'undefined' as a value
       if (value === 'undefined') {
         return undefined as unknown as T
       }
@@ -39,8 +38,6 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, Dispatch<S
       return parsed as T
     }, [initialValue])
 
-  // Get from local storage then
-  // parse stored json or return initialValue
   const readValue = useCallback((): T => {
     const initialValueToUse =initialValue
     try {
@@ -56,8 +53,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, Dispatch<S
     return initialValue
   })
 
-  // Return a wrapped version of useState's setter function that ...
-  // ... persists the new value to localStorage.
+
   const setValue: Dispatch<SetStateAction<T>> = useEventCallback(value => {
     try {
       // Allow value to be a function so we have the same API as useState

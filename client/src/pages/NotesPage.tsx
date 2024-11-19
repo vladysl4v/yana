@@ -6,6 +6,7 @@ import NoteModal from '../components/NoteModal';
 import { useNotes } from '../hooks/useNotes';
 import useNoteControls from '../hooks/useNoteControls';
 import { NoteActionTypes } from '../types/note.types';
+import ToolBar from '../components/ToolBar';
 
 const NotesPage: React.FC = () => {
     const modalControls = useNoteControls();
@@ -14,6 +15,7 @@ const NotesPage: React.FC = () => {
 
     return (
         <>
+            <ToolBar className='max-w-screen-xl mt-3 w-full' />
             <div className='mx-10 mb-4'>
                 <CreateNote onClick={() => modalControls.openNote(null, NoteActionTypes.EDIT)} className='w-full md:hidden' />
             </div>
